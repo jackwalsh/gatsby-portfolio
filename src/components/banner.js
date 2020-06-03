@@ -1,33 +1,33 @@
-import React from 'react';
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Banner = () => {
   const data = useStaticQuery(graphql`
-      query {
-        poppinShades: file(relativePath: { eq: "poppin-shades.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        diamonds: file(relativePath: { eq: "diamonds.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        orange: file(relativePath: { eq: "sexy-orange.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
+    query {
+      poppinShades: file(relativePath: { eq: "poppin-shades.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
-    `)
+      diamonds: file(relativePath: { eq: "diamonds.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      orange: file(relativePath: { eq: "sexy-orange.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <div className="banner">
@@ -36,9 +36,7 @@ const Banner = () => {
           <div className="side-image left">
             <Img fluid={data.diamonds.childImageSharp.fluid} />
           </div>
-          <div className="main-text">
-            Oladimeji Odunsi
-          </div>
+          <div className="main-text">Oladimeji Odunsi</div>
           <div className="main-image">
             <Img fluid={data.poppinShades.childImageSharp.fluid} />
           </div>
@@ -50,9 +48,9 @@ const Banner = () => {
           <span>Scroll Down</span>
         </div>
       </div>
+      <div className="fixed-misc">Visual Artist and Photographer</div>
     </div>
   )
-
 }
 
 export default Banner

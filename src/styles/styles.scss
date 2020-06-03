@@ -1,5 +1,5 @@
-$font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segue UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
+$font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segue UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
 // Colors
 $white: #fff;
@@ -7,8 +7,8 @@ $black: #000;
 $maroon: #83333e;
 $off-white: #f2f4f5;
 
-
-html, body {
+html,
+body {
   font-family: $font;
   font-size: 16px;
 }
@@ -18,17 +18,17 @@ html, body {
   width: 1640px;
   min-width: 1640px;
   margin: 0 auto;
-  @media(max-width: 1440px) {
+  @media (max-width: 1440px) {
     width: 1280px;
     min-width: 1280px;
   }
 
-  @media(max-width: 1280px) {
+  @media (max-width: 1280px) {
     width: 976px;
     min-width: 976px;
   }
 
-  @media(max-width: 976px) {
+  @media (max-width: 976px) {
     width: 768px;
     min-width: 768px;
   }
@@ -65,7 +65,7 @@ header {
           color: $black;
           &:last-child {
             margin-right: 0;
-          } 
+          }
         }
       }
     }
@@ -119,7 +119,7 @@ header {
         @media (max-width: 1440px) {
           left: 128px;
         }
-      } 
+      }
       &.right {
         right: 168px;
         bottom: 12px;
@@ -130,7 +130,7 @@ header {
     }
   }
   .scroll {
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-decoration: none;
@@ -139,5 +139,108 @@ header {
     position: absolute;
     bottom: 48px;
   }
+  .fixed-misc {
+    position: fixed;
+    top: 50%;
+    right: -48px;
+    transform: rotate(-90deg);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 1.5px;
+    color: $white;
+    mix-blend-mode: difference;
+    z-index: 8;
+    @media (max-width: 1440px) {
+      right: -112px;
+    }
+  }
 }
 
+// About blurb
+
+.about-blurb {
+  padding: 48px 0;
+  background: $white;
+  position: relative;
+  .inner-blurb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .content {
+      width: 33%;
+      @media (max-width: 1440px) {
+        width: 40%;
+      }
+      h3 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        letter-spacing: 1.5px;
+        margin: 0;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 2rem;
+        font-weight: 300;
+        margin: 40px 0 72px;
+      }
+      .btn-row {
+        a {
+          font-weight: 700;
+          font-size: 0.875em;
+          letter-spacing: 1.5px;
+          color: $black;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+    }
+    .images {
+      width: 50%;
+      height: 1000px;
+      position: relative;
+      z-index: 7;
+      @media (max-width: 1440px) {
+        height: 800px;
+      }
+      .top-right {
+        position: absolute;
+        width: 460px;
+        top: 0;
+        right: 0;
+        z-index: 4;
+        @media (max-width: 1440px) {
+          width: 360px;
+        }
+      }
+      .bottom-left {
+        position: absolute;
+        width: 410px;
+        left: 0;
+        bottom: 0;
+        @media (max-width: 1440px) {
+          width: 310px;
+        }
+      }
+    }
+  }
+  .black-box {
+    background: $black;
+    height: 418px;
+    width: 836px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @media (max-width: 1440px) {
+      width: 636px;
+      height: 340px;
+    }
+    &.overlay {
+      z-index: 7;
+      background: $maroon;
+      mix-blend-mode: overlay;
+    }
+  }
+}
